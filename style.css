@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1726502102472-2108ef2a5cae?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    white-space: nowrap;
+}
+
+main .card {
+    width: 25vw;
+    max-width: 400px; /* Set a max width for larger screens */
+    height: 65vh;
+    padding: 15px;
+    background-color: rgba(241, 241, 241, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden; /* Prevent overflow */
+}
+
+main .card .header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .card .header img {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+main .card .header .icons {
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+}
+
+main .card .header .icons i {
+    font-size: 30px;
+    color: #111;
+}
+
+main .card .header .icons i:hover {
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+main .card .stories {
+    width: 100%;
+    height: 130px;
+    border-bottom: 1px solid #dadada;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+main .card .stories::-webkit-scrollbar {
+    display: none;
+}
+
+main .card .stories .story {
+    width: 80px;
+    height: 90px;
+    display: inline-block;
+    margin-left: 5px;
+    text-align: center;
+}
+
+main .card .stories .story .circle {
+    width: 75px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 5px;
+    background: linear-gradient(
+        45deg,
+        #ffa95f 5%,
+        #f99c4a 15%,
+        #f47838 30%,
+        #e75157 45%,
+        #d92d7a 70%,
+        #cc2a92 80%,
+        #c32e92 95%
+    );
+    padding: 2.5px;
+}
+
+main .card .stories .circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+main .card .stories .circle p {
+    font-size: 1rem;
+    color: #000;
+    font-weight: 500;
+}
+
+main .card #storyScreen {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: inherit;
+    background-size: contain;
+    background-position: center;
+    display: none;
+    background-repeat: no-repeat;
+}
+
+main .card .feed .userInfo {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+main .card .feed .userInfo .user {
+    display: flex;
+    align-items: center;
+}
+
+main .card .feed .userInfo .user img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+main .card .feed .userInfo .user i {
+    font-size: 18px;
+    color: blue;
+}
+
+main .card .feed .userInfo .user p {
+    font-size: 1rem;
+    color: #000;
+    font-weight: 500;
+}
+
+main .card .feed .userInfo i {
+    font-size: 30px;
+    color: #111;
+}
+
+main .card .feed .post {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+main .card .feed .post img {
+    width: 100%;
+    height: auto; /* Change to auto for better responsiveness */
+    object-fit: cover;
+}
+
+main .card .feed .post i {
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    mix-blend-mode: luminosity;
+    opacity: 0;
+    transition: all ease 0.7s;
+}
+
+main .card .feed .interaction {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+main .card .feed .interaction .lcs {
+    display: flex;
+    align-items: center;
+}
+
+main .card .feed .interaction .lcs i {
+    font-size: 30px;
+    color: #111;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+main .card .feed .interaction .lcs i:nth-child(1) {
+    margin-right: 0;
+}
+
+main .card .feed .interaction i {
+    font-size: 30px;
+    color: #111;
+    mix-blend-mode: luminosity;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    main .card {
+        width: 30vw;
+        height: 70vh;
+    }
+}
+
+@media (max-width: 992px) {
+    main .card {
+        width: 40vw;
+        height: auto; /* Allow height to adjust */
+    }
+}
+
+@media (max-width: 768px) {
+    main .card {
+        width: 80vw;
+        height: auto; /* Allow height to adjust */
+    }
+
+    main .card .stories {
+        height: 100px;
+    }
+
+    main .card .stories .story {
+        width: 60px;
+        height: 80px;
+    }
+
+    main .card .feed .userInfo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    main .card .feed .userInfo .user {
+        margin-bottom: 5px;
+    }
+
+    main .card .feed .interaction {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 576px) {
+    main .card {
+        width: 90vw;
+        height: auto; /* Allow height to adjust */
+    }
+
+    main .card .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    main .card .header .icons {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    main .card .feed .userInfo {
+        width: 100%;
+    }
+
+    main .card .feed .post img {
+        height: auto; /* Ensure images are responsive */
+    }
+}
